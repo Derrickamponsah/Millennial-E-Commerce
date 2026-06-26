@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMS – The E-Millenial Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a href="#top" class="logo">
+        <img src="Images/EMS.svg" alt="EMS Logo" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#shop">Shop</a></li>
+      </ul>
+      <button class="cart-btn" id="cartBtn" aria-label="Open shopping cart">
+        <img src="Images/cart.svg" alt="Cart Icon" class="cart-icon-img" />
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== INTRO SECTION ===== -->
+  <section class="intro" id="intro">
+    <div class="container intro-inner">
+      <div class="intro-text">
+        <h1>THE<br />E-MILLENIAL<br />STORE</h1>
+        <a href="#shop" class="btn btn-primary">SHOP NOW</a>
+      </div>
+      <div class="intro-image">
+        <img src="Images/heroImage.png" alt="EMS Hero Image" class="hero-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="about-text">
+        E-Millenial Store is a hypothetical online store for gadgets we believe every 'Millennial' or 'Gen-Z' should have today. We've got mobile phones, laptops, smartwatches and other gadgets. Explore all our gadgets and choose the ones that suit you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SHOP SECTION ===== -->
+  <section class="shop" id="shop">
+    <div class="container">
+      <h2 class="section-title">OUR GADGETS</h2>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#top" class="logo logo--light">
+        <img src="Images/EMS.svg" alt="EMS Logo" class="logo-img" />
+      </a>
+      <p class="footer-copy">Designed and Crafted by a&nbsp;Frontend Ninja</p>
+    </div>
+  </footer>
+
+  <!-- ===== CART MODAL ===== -->
+  <div class="modal-overlay" id="cartOverlay">
+    <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+      <div class="cart-header">
+        <img src="Images/EMS.svg" alt="EMS Logo" class="logo-img logo-img--sm" />
+        <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+      </div>
+
+      <!-- Items Section -->
+      <div class="cart-items-section">
+        <table class="cart-table" id="cartTable">
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cartTableBody">
+            <!-- Cart rows injected by JS -->
+          </tbody>
+        </table>
+        <p class="cart-empty" id="cartEmpty">Your cart is empty. Start shopping!</p>
+      </div>
+
+      <!-- User Details Section -->
+      <div class="cart-user-section">
+        <input type="text" id="userName" class="cart-input" placeholder="Your Name" />
+        <span class="field-error" id="nameError"></span>
+        <input type="email" id="userEmail" class="cart-input" placeholder="Your Email" />
+        <span class="field-error" id="emailError"></span>
+        <input type="tel" id="userPhone" class="cart-input" placeholder="Your Phone Number" />
+        <span class="field-error" id="phoneError"></span>
+      </div>
+
+      <!-- Total Section -->
+      <div class="cart-total-section">
+        <p class="cart-total-label">Total Amount to be Paid</p>
+        <p class="cart-total-amount" id="cartTotal">₦0</p>
+      </div>
+
+      <!-- Actions Section -->
+      <div class="cart-actions-section">
+        <button class="btn btn-outline" id="continueShoppingBtn">Continue Shopping</button>
+        <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SUMMARY MODAL ===== -->
+  <div class="modal-overlay" id="summaryOverlay">
+    <div class="summary-modal" id="summaryModal" role="dialog" aria-modal="true" aria-label="Order Summary">
+      <p class="summary-thanks" id="summaryThanks">Thank You, <span class="summary-name" id="summaryName"></span>, Your Order Has Been Received</p>
+      <div class="summary-check">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <h3 class="summary-heading">Summary</h3>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Item</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody id="summaryTableBody"></tbody>
+      </table>
+      <button class="btn btn-primary summary-ok" id="summaryOkBtn">Ok</button>
+    </div>
+  </div>
+
+  <!-- Paystack -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
