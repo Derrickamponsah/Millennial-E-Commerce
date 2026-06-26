@@ -5,7 +5,7 @@
 ## 🚀 Live Demo
 
 <!-- Add your live link here, e.g. GitHub Pages, Netlify, Vercel -->
-[View Live Site](#)
+https://derrickamponsah.github.io/Millennial-E-Commerce/
 
 ---
 
